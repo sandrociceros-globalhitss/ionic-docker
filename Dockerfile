@@ -3,7 +3,7 @@ MAINTAINER sidibecker [at] hotmail [dot] com
 
 ENV DEBIAN_FRONTEND=noninteractive \
     ANDROID_DIR=/opt/android \
-    NPM_VERSION=6.14.12 \
+    NPM_VERSION=8.19.4 \
     IONIC_VERSION=latest \
     CORDOVA_VERSION=10.0.0 \
     GRADLE_VERSION=7.1.1 \
