@@ -9,6 +9,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
     GRADLE_VERSION=7.1.1 \
     ANDROID_COMPILE_SDK=31 \
     ANDROID_BUILD_TOOLS=32.0.0 \
+    ALPINE_REPOSITORY_VERSION=v3.15 \
+    NODE_JS_VERSION=16.20.0-r0 \
     DBUS_SESSION_BUS_ADDRESS=/dev/null
 
 # Timezone
@@ -16,6 +18,11 @@ RUN apk add tzdata
 RUN cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 RUN echo "America/Sao_Paulo" > /etc/timezone
 RUN date
+
+
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/$ALPINE_REPOSITORY_VERSION/main/" >> /etc/apk/repositories
+
+RUN more /etc/apk/repositories
 
 # Install basics
 RUN apk update 
@@ -26,7 +33,7 @@ RUN apk add --virtual build-dependencies
 RUN apk add git wget curl unzip jq 
 RUN apk add npm
 RUN apk update &&  \
-    apk add nodejs && \
+    apk add nodejs="$NODE_JS_VERSION" && \
     npm install -g \ 
     npm@"$NPM_VERSION" \
     cordova@"$CORDOVA_VERSION" \
