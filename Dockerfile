@@ -1,16 +1,16 @@
 FROM  adoptopenjdk/openjdk11:alpine
-MAINTAINER sidibecker [at] hotmail [dot] com
+LABEL org.opencontainers.image.authors="sandro.cicero.3@globalhitss.com.br"
 
 ENV DEBIAN_FRONTEND=noninteractive \
     ANDROID_DIR=/opt/android \
-    NPM_VERSION=8.19.4 \
-    IONIC_VERSION=latest \
-    CORDOVA_VERSION=10.0.0 \
-    GRADLE_VERSION=7.1.1 \
-    ANDROID_COMPILE_SDK=31 \
-    ANDROID_BUILD_TOOLS=32.0.0 \
-    ALPINE_REPOSITORY_VERSION=v3.15 \
-    NODE_JS_VERSION=16.20.0-r0 \
+    NPM_VERSION=10.8.1 \
+    IONIC_VERSION=6.1.9 \
+    CORDOVA_VERSION=11.0.0 \
+    GRADLE_VERSION=8.8 \
+    ANDROID_COMPILE_SDK=35 \
+    ANDROID_BUILD_TOOLS=34.0.0 \
+    ALPINE_REPOSITORY_VERSION=v3.20.1 \
+    NODE_JS_VERSION=12.20.55 \
     DBUS_SESSION_BUS_ADDRESS=/dev/null
 
 # Timezone
