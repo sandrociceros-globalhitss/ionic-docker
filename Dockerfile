@@ -27,7 +27,7 @@ RUN more /etc/apk/repositories
 # Install basics
 RUN apk update 
 RUN apk add --no-cache --upgrade bash
-RUN apk add libstdc++6 expect apache-ant wget libgcc qemu kmod util-linux
+#RUN apk add libstdc++6 expect apache-ant wget libgcc qemu kmod util-linux
 
 RUN apk add --virtual build-dependencies
 RUN apk add git wget curl unzip jq 
